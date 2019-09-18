@@ -11,20 +11,20 @@ attendees.
 
 
 ### About the Workshop
-The workshop is a seventy-five minute in-class session consisting of a brief 
+The workshop is a seventy-five (75) minute in-class session consisting of a brief 
 presentation, followed by a hands-on activity where groups will configure
 microcontrollers to act as various inputs to a [simple] autonomous rover.
 The hands-on activity will lead into a demonstration of the rover functioning
 with the attached sensors, then a discussion of how such architectures
 are ubiquitous today, and what challenges they bring.  Specifically, we will
-discuss what can happen when sensors go bad 
+discuss what can happen when sensors lie 
 (see [737MAX](https://www.seattletimes.com/business/boeing-aerospace/a-lack-of-redundancies-on-737-max-system-has-baffled-even-those-who-worked-on-the-jet/)), 
 when sensor data is interpreted incorrectly 
 (see [Self-Driving Cars](https://en.wikipedia.org/wiki/List_of_self-driving_car_fatalities)), 
 and how sensors can be a vector for attack 
 (see [Fish Tank](https://money.cnn.com/2017/07/19/technology/fish-tank-hack-darktrace/index.html)). 
 Lastly, we will discuss the concept of attack vectors/surfaces,
-and how distributed systems can expose surprising  vulnerabilities (see [In Flight Entertainment](https://www.wired.com/2015/05/feds-say-banned-researcher-commandeered-plane/)).   
+and how interconnected systems can expose surprising  vulnerabilities (see [In Flight Entertainment](https://www.wired.com/2015/05/feds-say-banned-researcher-commandeered-plane/)).   
 
 
 ### To the Attendees
