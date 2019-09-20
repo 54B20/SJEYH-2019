@@ -1,10 +1,28 @@
+"""
+FILE: main.py
+DESC: Working example for IR (stoplight) sensor
+"""
 import board
+import busio
 from analogio import AnalogOut, AnalogIn
-import time
+from time import sleep
+
+threshold = 30000
+delay = 0.61
 
 ir = AnalogIn(board.D1)
+uart = busio.UART(board.TX, board.RX, baudrate=9600)
+
 
 while True:
-    # Read IR detector value
     print("IR: " + str(ir.value))
-    time.sleep(1) # make bigger to slow down
+    if ir.value > threshold:
+        uart.write("!")
+        uart.write("!")
+        uart.write("!")
+    else:
+        uart.write("^")
+        uart.write("^")
+        uart.write("^")
+
+    sleep(delay)
