@@ -10,8 +10,9 @@ from time import sleep
 
 target_rate = 10  # goal in ticks/sec
 delay = 0.67
-uart = busio.UART(board.TX, board.RX, baudrate=9600)
 pulses = pulseio.PulseIn(board.D2)
+uart = busio.UART(board.TX, board.RX, baudrate=9600)
+
 
 while True:
     count = len(pulses)
@@ -20,15 +21,10 @@ while True:
 
     if rate < target_rate:
         uart.write("+")
-        uart.write("+")
-        uart.write("+")
     elif rate > target_rate:
-        uart.write("-")
-        uart.write("-")
         uart.write("-")
     else:
         uart.write("=")
-        uart.write("=")
-        uart.write("=")
+
     pulses.clear()
     sleep(delay)

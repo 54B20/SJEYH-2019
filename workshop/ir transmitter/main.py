@@ -1,18 +1,27 @@
+"""
+FILE: main.py
+DESC: Working example for IR (stoplight) sensor
+"""
 import board
-from digitalio import DigitalInOut, Direction, Pull
+import busio
 from analogio import AnalogOut, AnalogIn
-import time
+from time import sleep
 
-redled = DigitalInOut(board.D13)
-irled = DigitalInOut(board.D2)
+threshold = 30000
+delay = 0.61
 
-redled.direction = Direction.OUTPUT
-irled.direction = Direction.OUTPUT
+ir = AnalogIn(board.D1)
+
+def uart_write(c):
+    with busio.UART(board.TX, board.RX, baudrate=9600) as uart:
+        uart.write(c)
 
 while True:
-    redled.value = True
-    irled.value = True
-    time.sleep(1)
-    redled.value = False
-    irled.value = False
-    time.sleep(1)
+    irval = ir.value
+    print("IR: " + str(irval))
+    if irval > threshold:
+        uart_write('!')
+    else:
+        uart_write('^')
+
+    sleep(delay)
